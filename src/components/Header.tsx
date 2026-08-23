@@ -57,35 +57,56 @@ export const Header: React.FC = () => {
 
   // Scroll spy to detect active section smoothly
   useEffect(() => {
-    let isThrottled = false;
+    let rafId: number | null = null;
 
     const handleScroll = () => {
-      if (isThrottled) return;
-      isThrottled = true;
+      if (rafId !== null) return;
 
-      setTimeout(() => {
-        isThrottled = false;
-      }, 100);
+      rafId = window.requestAnimationFrame(() => {
+        rafId = null;
+        const sections = ['home', 'experience', 'projects', 'skills', 'contact'];
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
 
-      const sections = ['home', 'experience', 'projects', 'skills', 'contact'];
-      const scrollPosition = window.scrollY + 250;
+        // 1. If near the end of the document, activate 'contact'
+        if (windowHeight + scrollPosition >= documentHeight - 80) {
+          setActiveSection('contact');
+          return;
+        }
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const sectionId = sections[i];
-        const el = document.getElementById(sectionId);
-        if (el) {
-          const top = el.offsetTop;
-          if (scrollPosition >= top) {
-            setActiveSection(sectionId);
-            break;
+        // 2. If near the top of the document, activate 'home'
+        if (scrollPosition < 80) {
+          setActiveSection('home');
+          return;
+        }
+
+        // 3. Determine active section based on viewport position
+        const triggerPoint = windowHeight * 0.35;
+        let currentSection = 'home';
+
+        for (const sectionId of sections) {
+          const el = document.getElementById(sectionId);
+          if (el) {
+            const rect = el.getBoundingClientRect();
+            if (rect.top <= triggerPoint) {
+              currentSection = sectionId;
+            }
           }
         }
-      }
+
+        setActiveSection(currentSection);
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+      }
+    };
   }, []);
 
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string, id: string) => {
