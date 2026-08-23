@@ -16,7 +16,7 @@ export const content: Record<Locale, ContentData> = {
     home: {
       name: 'Pedro Salles',
       role: 'Desenvolvedor de Software',
-      bio: 'Sou estudante de Informática e desenvolvedor de software. Crio sites, automações e ferramentas para resolver problemas reais, com projetos que vão de soluções para o ambiente acadêmico a aplicações para pequenos negócios.',
+      bio: 'Sou estudante de Informática e desenvolvedor de software. Crio sites, automações e ferramentas para resolver problemas reais, com projetos que vão de soluções para o ambiente acadêmico a aplicações para empresas locais.',
       greetings: {
         morning: 'Bom dia!',
         afternoon: 'Boa tarde!',
@@ -40,12 +40,6 @@ export const content: Record<Locale, ContentData> = {
           url: 'https://wa.me/5555999214159',
           icon: 'whatsapp',
           ariaLabel: 'Conversar no WhatsApp com Pedro Salles',
-        },
-        {
-          name: 'Instagram',
-          url: 'https://www.instagram.com/ph.salles__/',
-          icon: 'instagram',
-          ariaLabel: 'Perfil no Instagram de Pedro Salles',
         },
       ],
     },
@@ -232,12 +226,6 @@ export const content: Record<Locale, ContentData> = {
           ariaLabel: 'GitHub Pedro Salles',
         },
         {
-          name: 'Instagram',
-          url: 'https://www.instagram.com/ph.salles__/',
-          icon: 'instagram',
-          ariaLabel: 'Instagram Pedro Salles',
-        },
-        {
           name: 'WhatsApp',
           url: 'https://wa.me/5555999214159',
           icon: 'whatsapp',
@@ -292,12 +280,6 @@ export const content: Record<Locale, ContentData> = {
           url: 'https://wa.me/5555999214159',
           icon: 'whatsapp',
           ariaLabel: 'Chat on WhatsApp with Pedro Salles',
-        },
-        {
-          name: 'Instagram',
-          url: 'https://www.instagram.com/ph.salles__/',
-          icon: 'instagram',
-          ariaLabel: 'Instagram profile of Pedro Salles',
         },
       ],
     },
@@ -482,12 +464,6 @@ export const content: Record<Locale, ContentData> = {
           url: 'https://github.com/pedroSalles08',
           icon: 'github',
           ariaLabel: 'GitHub Pedro Salles',
-        },
-        {
-          name: 'Instagram',
-          url: 'https://www.instagram.com/ph.salles__/',
-          icon: 'instagram',
-          ariaLabel: 'Instagram Pedro Salles',
         },
         {
           name: 'WhatsApp',
