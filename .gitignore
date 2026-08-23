@@ -4,7 +4,7 @@ dist/
 .env
 .env.*
 references/
-assets/
+/assets/
 CONTENT_atualizado.md
 IMPLEMENTATION_NOTES.md
 RYTHON_REFERENCE.md
