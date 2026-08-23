@@ -57,11 +57,16 @@ export const HomeSection: React.FC = () => {
         >
           <div className="w-full px-5 pt-10 pb-6 lg:px-10">
             {/* Header with Avatar, Name and Role */}
-            <div className="flex h-20 flex-row items-center">
+            <div className="flex min-h-20 flex-row items-center">
               <div className="mr-3 flex h-20 w-20 shrink-0 items-center justify-center">
-                {/* Neutral clean profile placeholder with exact 80x80 dimensions */}
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#2a2a2a] border border-gray-700 text-gray-400 font-bold text-2xl select-none shadow-inner">
-                  PS
+                {/* Profile photo with 80x80 dimensions */}
+                <div className="flex h-20 w-20 items-center justify-center overflow-hidden rounded-full border border-gray-700 bg-[#2a2a2a] shadow-inner">
+                  <img
+                    src="/images/profile/pedro-salles.jpg"
+                    alt={t.home.name}
+                    className="h-full w-full object-cover object-[center_22%] select-none"
+                    loading="eager"
+                  />
                 </div>
               </div>
               <div className="ml-2 flex flex-col items-start justify-center">

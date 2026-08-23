@@ -33,10 +33,15 @@ export const ContactSection: React.FC = () => {
             }}
           >
             <div className="flex flex-col items-center justify-center gap-2 py-10 px-6">
-              {/* Profile Photo Placeholder with Cyan Accent Border */}
+              {/* Profile Photo with Cyan Accent Border */}
               <div className="mb-1 px-5">
-                <div className="flex h-[150px] w-[150px] items-center justify-center rounded-full border-2 border-solid border-accent bg-[#2a2a2a] text-gray-400 font-bold text-4xl select-none aspect-square object-cover shadow-[0_0_15px_rgba(114,255,255,0.3)]">
-                  PS
+                <div className="flex h-[130px] w-[130px] md:h-[140px] md:w-[140px] items-center justify-center overflow-hidden rounded-full border-2 border-solid border-accent bg-[#2a2a2a] aspect-square shadow-[0_0_15px_rgba(114,255,255,0.3)]">
+                  <img
+                    src="/images/profile/pedro-salles.jpg"
+                    alt={t.contact.name}
+                    className="h-full w-full object-cover object-[center_22%] select-none"
+                    loading="lazy"
+                  />
                 </div>
               </div>
 

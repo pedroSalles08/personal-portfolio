@@ -215,6 +215,7 @@ export const content: Record<Locale, ContentData> = {
       ],
       resumeButton: 'Ver currículo',
       resumeNotice: 'Currículo em PDF a ser disponibilizado em breve.',
+      resumeUrl: '/assets/cv/resume-pt.pdf',
       emailLabel: 'encarnacaosalless@gmail.com',
     },
     contact: {
@@ -466,6 +467,7 @@ export const content: Record<Locale, ContentData> = {
       ],
       resumeButton: 'View Resume',
       resumeNotice: 'PDF resume will be available soon.',
+      resumeUrl: '/assets/cv/resume-en.pdf',
       emailLabel: 'encarnacaosalless@gmail.com',
     },
     contact: {

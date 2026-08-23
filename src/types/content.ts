@@ -79,6 +79,7 @@ export interface ContentData {
     bioParagraphs: string[];
     resumeButton: string;
     resumeNotice: string;
+    resumeUrl: string;
     emailLabel: string;
   };
   contact: {

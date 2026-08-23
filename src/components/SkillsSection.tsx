@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const SkillsSection: React.FC = () => {
   const { t } = useLanguage();
-  const [showResumeNotice, setShowResumeNotice] = useState(false);
-
-  const handleResumeClick = () => {
-    setShowResumeNotice(true);
-    setTimeout(() => {
-      setShowResumeNotice(false);
-    }, 4000);
-  };
 
   return (
     <div id="skills" className="scroll-mt-16 pt-20">
@@ -75,21 +67,16 @@ export const SkillsSection: React.FC = () => {
                 </p>
               ))}
 
-              {/* View Resume Button (Prepared for PDF) */}
+              {/* View Resume Button */}
               <div className="mt-4 flex flex-col sm:flex-row items-start sm:items-center gap-3">
-                <button
-                  type="button"
-                  onClick={handleResumeClick}
-                  className="rounded-lg bg-white px-5 py-2.5 text-sm font-bold text-black transition-colors duration-200 hover:bg-neutral-200 shadow-md"
+                <a
+                  href={t.skills.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block rounded-lg bg-white px-5 py-2.5 text-sm font-bold text-black transition-colors duration-200 hover:bg-neutral-200 shadow-md"
                 >
                   {t.skills.resumeButton}
-                </button>
-
-                {showResumeNotice && (
-                  <span className="text-xs text-accent animate-fadeIn font-mono">
-                    {t.skills.resumeNotice}
-                  </span>
-                )}
+                </a>
               </div>
             </div>
           </div>
