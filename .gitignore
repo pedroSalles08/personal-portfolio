@@ -5,3 +5,6 @@ dist/
 .env.*
 references/
 assets/
+CONTENT_atualizado.md
+IMPLEMENTATION_NOTES.md
+RYTHON_REFERENCE.md
